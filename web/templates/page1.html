@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block main %}
+    <h1>logo</h1>
+    <img src="{% static 'img/photo_1.jpg' %}" alt="no">
+    <h3>Lorem ipsum dolor siurt amet consectetur adipisicing elit. Dolor animi, soluta, accusamus officia autem illo dolorum obcaecati explicabo, consequuntur cumque saepe! Eveniet neque qui ipsa placeat quos labore molestias facere!</h3>
+
+    <a href="{% url 'singup' %}" class="singup_a">singup</a>
+{% endblock %}

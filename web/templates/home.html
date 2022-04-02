@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block main %}
+    <h1 class="logo"> logo </h1>
+
+    <h3 class="h3">hi this is my new com and we hop to to help you how we can my com is ofer great servess </h3>
+
+    <div class="all">
+        <div class="page">
+            <div class="page1">
+                <a href="{% url 'page1' %}"><img src="{% static 'img/photo_1.jpg' %}" alt="" class="imgs"> hi </a>
+            </div>
+        </div>
+    
+        <div class="page">
+            
+            <div class="page2">
+                <a href="{% url 'page2' %}"><img src="{% static 'img/photo_2.jpg' %}" alt="" class="imgs"> hi </a>
+            </div>
+        </div>
+    
+        <div class="page">
+            <div class="page3">
+                <a href="{% url 'page3' %}"><img src="{% static 'img/photo_3.jpg' %}" alt="" class="imgs"> hi </a>
+            </div>
+        </div>
+    
+        <div class="page">
+            <div class="page4">
+                <a href="{% url 'page4' %}"><img src="{% static 'img/photo_4.jpg' %}" alt="" class="imgs"> hi </a>
+            </div>
+        </div>
+        
+    </div>
+{% endblock %}
