@@ -145,7 +145,7 @@ EMAIL_HOST_TLS = True
 
 
 
-django_heroku.setting(locals())
+django_heroku.settings(locals())
 
 '''
 EMAIL_HOST = 'localhost'
