@@ -7,4 +7,4 @@ class Person(models.Model):
     last_name = models.CharField(max_length=30)
     email = models.EmailField()
     number = models.IntegerField()
-    zip = models.IntegerField(max_length=6)
+    zip = models.IntegerField()
