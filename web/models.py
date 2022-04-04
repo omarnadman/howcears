@@ -5,8 +5,8 @@ from django.conf import settings
 
 
 
-import django
-django.setup()
+
+app_label = 'web'
 
 class Person(models.Model):
     first_name = models.CharField(max_length=30)
