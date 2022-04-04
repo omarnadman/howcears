@@ -1,6 +1,10 @@
 import email
 from django.db import models
 
+from django.conf import settings
+
+settings.configure()
+
 
 class Person(models.Model):
     first_name = models.CharField(max_length=30)
