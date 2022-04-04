@@ -3,8 +3,10 @@ from django.db import models
 
 from django.conf import settings
 
+settings.configure()
 
-
+import django
+django.setup()
 
 app_label = 'web'
 
