@@ -5,6 +5,8 @@ from django.conf import settings
 
 settings.configure()
 
+import django
+django.setup()
 
 class Person(models.Model):
     first_name = models.CharField(max_length=30)
