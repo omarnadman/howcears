@@ -1,6 +1,8 @@
+import email
 from django.shortcuts import render
 from .models import Person
 from django.core.mail import send_mail
+from .forms import Send
 
 
 
@@ -11,22 +13,20 @@ def home(request):
 
 
 def singup(request):
-    person = Person.objects.all()
-    f_name = request.POST.get('first_name')
-    l_name = request.POST.get('last_name')
-    emai = request.POST.get('email')
-    num = request.POST.get('number')
-    z = request.POST.get('zip')
-    if request.POST.get ('submit'):
-        person.create(first_name=f_name ,last_name=l_name ,email=emai ,number=num,zip=z)
+    form = Send()
+    submitted = False
+    if request.method == "POST":
+        form = Send(request.POST)
+        if form.is_valid():
+            form.save()
 
-        send_mail(
-            f_name,
-            'some thing',
-            emai,
-            ['omarnadman@gmail.com'],
-        )
-    return render(request, 'singup.html', {'person':person})
+            send_mail(
+                Person.first_name,
+                'some thing',
+                Person.email,
+                ['omarnadman@gmail.com'],
+            )
+    return render(request, 'singup.html', {'for':form})
 
 def page1(request):
     return render(request, 'page1.html')
