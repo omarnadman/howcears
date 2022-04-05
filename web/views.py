@@ -14,16 +14,16 @@ def singup(request):
     person = Person.objects.all()
     f_name = request.POST.get('first_name')
     l_name = request.POST.get('last_name')
-    email = request.POST.get('email')
-    number = request.POST.get('number')
-    zip = request.POST.get('zip')
+    emai = request.POST.get('email')
+    num = request.POST.get('number')
+    z = request.POST.get('zip')
     if request.POST.get ('submit'):
-        person.create(first_name=f_name ,last_name=l_name ,email=email ,number=number,zip=zip)
+        person.create(first_name=f_name ,last_name=l_name ,email=emai ,number=num,zip=z)
 
         send_mail(
             f_name,
             'some thing',
-            email,
+            emai,
             ['omarnadman@gmail.com'],
         )
     return render(request, 'singup.html', {'person':person})
